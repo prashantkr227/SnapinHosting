@@ -444,3 +444,14 @@ body a:hover {
 .embeddedServiceSidebarButton.uiButton--inverse .label {
   color: #0065ab !important;
 }
+.embeddedServiceHelpButton .helpButton .helpButtonEnabled:hover::before, .embeddedServiceHelpButton .helpButton .helpButtonEnabled:focus::before{
+	content: " " !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	border-radius: 23px !important;
+	opacity: .2 !important;
+	pointer-events: none !important;
+}
