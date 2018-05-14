@@ -2,10 +2,12 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 		<link rel="stylesheet" type="text/css" href="clarity.css" media="all">
+		<!--<style type="text/css">
+			@import url("https://www-test11.vmware.com/content/dam/digitalmarketing/vmware/en/files/srccode/assets/css/clarity.css");
+		</style>-->
     </head>
     <body>
-		<div id="liveagent_invite_button_5734B000000CaZy" style="display:none;"><span style="cursor: pointer; width: 100px; height: 20px; padding: 5px;" onclick="liveagent.startChat('5734B000000CaZy')">Start Chat</span><span style="cursor: pointer; width: 100px; height: 20px; padding: 5px;" onclick="liveagent.rejectChat('5734B000000CaZy')">Reject Chat</span></div>
-        <script type='text/javascript' src='https://service.force.com/embeddedservice/4.1/esw.min.js'></script>
+       <script type='text/javascript' src='https://service.force.com/embeddedservice/4.1/esw.min.js'></script>
         <script type='text/javascript'>
         var initESW = function(gslbBaseURL) {
         embedded_svc.settings.displayHelpButton = true; //Or false
@@ -35,21 +37,20 @@
             embedded_svc.settings.widgetHeight = '550px';
             
             /*Variable defined for Contact Mail*/
-            //var mailId = 'tester1@testing.com';
-            var mailId= 'testing2@test.com';
-            var firstName = 'Prashant';
-            var lastName = 'Kumar';
-            var phoneNumber='1239874560';
+            var mailId= 'test@testing.com';
+            var firstName = 'TestFirstName';
+            var lastName = 'TestLastName';
+            var phoneNumber='9876543210';
             var contEmail = mailId;
             
             /*Variables defined for details to be displayed only in the current detail page*/
-            var serviceName = 'VMware Cloud On AWS';
+            var serviceName = 'VMware Cloud on AWS';
             var caseRecType = 'GSS Technical Support';
             var caseEnt = 'SPS';
-            var caseProduct = 'VMware Cloud On AWS';
+            var caseProduct = 'VMware Cloud on AWS';
             
             /*Variables defined for Case details*/
-            var caseOrigin = 'Chat';
+            var caseOrigin = 'Portal Chat';
             var caseStatus = 'Open';
             var caseSubStatus = 'Assigned';
             var caseDesc = 'Case created from Chat';
@@ -58,8 +59,8 @@
             var caseProbCat = 'VMware Cloud On AWS';
             var caseSev = 'S2';
             var caseEANumber = '12345';
-            var caseRecTypeId = '01280000000cYyhAAE';
-            var dcaId='0018000000onKRzAAM';
+            var caseRecTypeId = '01280000000cYyh';
+            var dcaId='0018000000onKQ8AAM';
             
             /*Added service name and other details to be displayed in the current detail page*/
             embedded_svc.settings.extraPrechatFormDetails = [
@@ -67,7 +68,7 @@
                 {"label": "Case Record Type", "value": caseRecType, "displayToAgent": true},
                 {"label": "Case Entitlement", "value": caseEnt, "displayToAgent": true},
                 {"label": "Case Product", "value": caseProduct, "displayToAgent": true},
-                {"label": "Email Id", "value": contEmail, "displayToAgent": true},
+                {"label": "Email Id", "value": contEmail, "displayToAgent": true,"transcriptFields":["Contact_Email__c"]},
                 {"label": "Case Origin", "value": caseOrigin, "displayToAgent": true},
                 {"label": "Case Status", "value": caseStatus, "displayToAgent": true},
                 {"label": "Case Sub Status", "value": caseSubStatus, "displayToAgent": true},
@@ -78,7 +79,7 @@
                 {"label": "Case Severity", "value": caseSev, "displayToAgent": true},
                 {"label": "Case RecordTypeId", "value": caseRecTypeId, "displayToAgent": false},
                 {"label": "DCA Account ID", "value": dcaId, "displayToAgent": false},
-                {"label": "First Name", "value": firstName, "displayToAgent": true},
+                {"label": "First Name", "value": firstName, "displayToAgent": true,"transcriptFields":["Contact_Name__c"]},
                 {"label": "Last Name", "value": lastName, "displayToAgent": true},
                 {"label": "Case EA Number", "value": caseEANumber, "displayToAgent": true},
                 {"label": "Contact Phone Number", "value": phoneNumber, "displayToAgent": false}
@@ -89,8 +90,8 @@
                 embedded_svc.settings.extraPrechatInfo = [{
                     "entityFieldMaps": [
                         {"doCreate":true, "doFind":true, "fieldName":"Email", "isExactMatch":true, "label":"Email Id"},
-                        {"doCreate":true, "doFind":false, "fieldName":"FirstName", "isExactMatch":true, "label":"First Name"},
-                        {"doCreate":true, "doFind":false, "fieldName":"LastName", "isExactMatch":true, "label":"Last Name"},
+                        {"doCreate":true, "doFind":false, "fieldName":"FirstName", "isExactMatch":false, "label":"First Name"},
+                        {"doCreate":true, "doFind":false, "fieldName":"LastName", "isExactMatch":false, "label":"Last Name"},
                         {"doCreate":true, "doFind":false, "fieldName":"Phone", "isExactMatch":false, "label":"Contact Phone Number"},
                         {"doCreate":true, "doFind":false, "fieldName":"AccountId", "isExactMatch":false, "label":"DCA Account ID"}
                     ],
@@ -112,7 +113,6 @@
             }
 
 
-embedded_svc.init('https://vmware--DEV2.cs51.my.salesforce.com', 'https://dev2-vmstarcommunity.cs51.force.com/', gslbBaseURL, '00D4B000000D2NP', 'VMware_Cloud_on_AWS', { baseLiveAgentContentURL: 'https://c.la1-c1cs-phx.salesforceliveagent.com/content', deploymentId: '5724B000000CaSe', buttonId: '5734B000000CaZt', baseLiveAgentURL: 'https://d.la1-c1cs-phx.salesforceliveagent.com/chat', eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I4B0000008OIoUAM_1629a5b3d0c'}); };if (!window.embedded_svc) { var s = document.createElement('script'); s.setAttribute('src', 'https://vmware--DEV2.cs51.my.salesforce.com/embeddedservice/4.1/esw.min.js'); s.onload = function() { initESW(null); }; document.body.appendChild(s); } else { initESW('https://service.force.com'); }</script>
-
+embedded_svc.init('https://vmware--PERF.cs66.my.salesforce.com', 'https://perf-vmware.cs66.force.com/LiveAgent', gslbBaseURL, '00D0v000000Csdg', 'EPG', { baseLiveAgentContentURL: 'https://c.la1-c2cs-iad.salesforceliveagent.com/content', deploymentId: '5720v000000007H', buttonId: '5730v000000009m', baseLiveAgentURL: 'https://d.la1-c2cs-iad.salesforceliveagent.com/chat', eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0v000000001iEAA_1634001b17c'}); };if (!window.embedded_svc) { var s = document.createElement('script'); s.setAttribute('src', 'https://vmware--PERF.cs66.my.salesforce.com/embeddedservice/4.1/esw.min.js'); s.onload = function() { initESW(null); }; document.body.appendChild(s); } else { initESW('https://service.force.com'); }</script>
     </body>
 </HTML>
