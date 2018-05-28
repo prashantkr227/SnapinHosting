@@ -1,0 +1,51 @@
+<HTML>
+<head>
+<style type="text/css">
+	.b1{
+		display:hidden;
+	}
+	.b2{
+		display:block;
+	}
+	.t1{
+		display:hidden;
+	}
+	.t2{
+		display:block;
+	}
+</style>
+<script type="text/javascript">
+		var chatsessionresponse='';
+		function initaiteChat() {
+			
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (xhttp.readyState == XMLHttpRequest.DONE) {
+				console.log('Inside');
+					console.log(xhttp.responseText);
+				}
+			}
+			xhttp.open('GET', 'https://d.la1-c1cs-phx.salesforceliveagent.com/chat/rest/System/SessionId',true);
+			xhttp.withCredentials=true;
+			xhttp.setRequestHeader('Content-type', 'application/json');
+			
+			xhttp.setRequestHeader('X-LIVEAGENT-API-VERSION', 42);
+			
+			xhttp.send();
+			console.log('Sending');
+			
+			
+			
+		}
+</script>
+</head>
+<BODY>
+	
+	<input type="button" id="initiatebutton" onclick="initaiteChat();" value="Initaite Chat"/>
+	
+	<input type="text" id="sendmessage"/>
+	<input type="button" id="sendbutton" value="Send"/>
+	<input type="text" id="receivemessage"/>
+
+</BODY>
+</HTML>
